@@ -1,6 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import Head from "next/head";
+import Image from "next/image";
+import { Suspense } from "react";
+import styles from "../styles/Home.module.css";
+import { Model } from "../Animations";
 
 export default function Home() {
   return (
@@ -11,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      {/*<main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -52,7 +56,26 @@ export default function Home() {
             </p>
           </a>
         </div>
-      </main>
+      </main> */}
+
+      <Canvas
+        camera={{ position: [2, 0, 12.25], fov: 15 }}
+        style={{
+          backgroundColor: "#000",
+          width: "100vw",
+          height: "100vh",
+        }}
+      >
+        <ambientLight intensity={1.25} />
+        <ambientLight intensity={0.1} />
+        <pointLight intensity={2} position={[1, 1, 3]} color="blue" />
+        <pointLight intensity={2} position={[-1, 2, 3]} color="red" />
+        <directionalLight intensity={0.4} />
+        <Suspense fallback={null}>
+          <Model position={[0.025, -0.9, 0]} />
+        </Suspense>
+        <OrbitControls />
+      </Canvas>
 
       <footer className={styles.footer}>
         <a
@@ -60,12 +83,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
