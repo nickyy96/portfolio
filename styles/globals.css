@@ -12,6 +12,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--backgroundColor);
 }
 
 a {
@@ -23,12 +25,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+button {
+  color: red
 }
+
