@@ -1,0 +1,9 @@
+.grid {
+    mask-image: radial-gradient(
+        300px 300px at 50% 50%,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0.8),
+        transparent
+    );
+    mask-repeat: no-repeat;
+}

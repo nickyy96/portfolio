@@ -17,6 +17,7 @@ export function Model(props) {
       actions["Dance"].stop();
       actions["Wave"].play();
     }, 5000)
+    console.log(props)
   }, []);
 
   return (

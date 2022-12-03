@@ -6,7 +6,7 @@ this article: https://blog.maximeheckel.com/posts/switching-off-the-lights-part-
 
 var themeConfig = {
     dark: {
-    "--backgroundColor": "#0e141b",
+    "--backgroundColor": "#000",
     "--fontColor": "#fff",
     },
     light: {

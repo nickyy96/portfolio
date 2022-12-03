@@ -3,9 +3,7 @@
     border: 0px;
     background: var(--backgroundColor);
     position: relative;
-    min-height: 100px;
     min-width: 100vw;
-    color: var(--fontColor);
 }
 
 .header:after {
