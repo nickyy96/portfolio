@@ -9,6 +9,18 @@
   overflow-x: hidden;
 }
 
+.scrollArrow {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+.scrollArrow svg {
+  width: 3rem;
+}
+
 .body {
   min-width: 100vw;
   min-height: 100vh;

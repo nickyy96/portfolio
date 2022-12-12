@@ -115,11 +115,13 @@
 }
 
 .emailinfo::before {
-    content: "nicholas_yarnall@brown.edu"
+    /* content: "nicholas_yarnall@brown.edu" */
+    content: "lazy_tortoise@brown.edu"
 }
 
 .linkedininfo::before {
-    content: "nicholas yarnall"
+    /* content: "nicholas yarnall" */
+    content: "lazy_tortoise"
 }
 
 @media screen and (max-width: 800px) {

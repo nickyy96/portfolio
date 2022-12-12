@@ -4,28 +4,28 @@ import { useEffect, useRef, useState } from "react";
 import styles from "../styles/Work.module.css"
 import Link from 'next/link';
 
-const projects = {
-  wordle: {
+const projects = [
+  {
+    img: "/images/wordle.png",
     name: "Wordle",
-    desc : "A modernized Wordle clone with some neat upgrades",
-    skills: ["ReactJS", "Sass", "Netlify", "Typescript", "Node.js", "CSS"]
+    desc: "A modernized Wordle clone with some neat upgrades"
   },
-  wordle1: {
-    name: "Wordle",
-    desc : "A modernized Wordle clone with some neat upgrades",
-    skills: ["ReactJS", "Sass", "Netlify", "Typescript", "Node.js", "CSS"]
+  {
+    img: "/images/redesign_main.png",
+    name: "Redesign",
+    desc: "A redesign of a hotel's website with prototypes, a style guide, and HTML"
   },
-  wordle2: {
-    name: "Wordle",
-    desc : "A modernized Wordle clone with some neat upgrades",
-    skills: ["ReactJS", "Sass", "Netlify", "Typescript", "Node.js", "CSS"]
+  {
+    img: "/images/development_main.png",
+    name: "Development",
+    desc: "A neat app to interact with Eagles players"
   },
-  wordle3: {
-    name: "Wordle",
-    desc : "A modernized Wordle clone with some neat upgrades",
-    skills: ["ReactJS", "Sass", "Netlify", "Typescript", "Node.js", "CSS"]
+  {
+    img: "/images/personas_main.png",
+    name: "Personas",
+    desc: "A charicature of hypothetical users of a Coca Cola machine"
   }
-}
+]
 
 interface WorkProps {
 
@@ -43,11 +43,11 @@ const Card = ({num}: CardProps) => {
         id={num.toString()}
       >
         <div className={styles.imgWrapper}>
-          <img src="/images/wordle.png"/>
+          <img src={projects[num].img}/>
         </div>
         <div className={styles.cover}>
-          <p>Wordle</p>
-          <p>A modernized Wordle clone with some neat upgrades</p>
+          <p>{projects[num].name}</p>
+          <p>{projects[num].desc}</p>
         </div>
       </div>
     );
@@ -61,11 +61,17 @@ const Work = ({}: WorkProps) => {
             </div>
             <div className={styles.grid}>
               <Link href="/wordle">
+                <Card num={0}></Card>
+              </Link>
+              <Link href="/redesign">
                 <Card num={1}></Card>
               </Link>
+              <Link href="/development">
                 <Card num={2}></Card>
+              </Link>
+              <Link href="/personas">
                 <Card num={3}></Card>
-                <Card num={4}></Card>
+              </Link>
             </div>
         </div>
     )

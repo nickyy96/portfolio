@@ -100,7 +100,7 @@ const Development = () => {
                     <div className={styles.body}>
                         <div className={styles.topheaderDev}>
                             <a
-                                href="https://github.com/lazytortoise905/development-final"
+                                href="https://github.com/lazytortoise905/development"
                                 target="_blank"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
@@ -120,13 +120,13 @@ const Development = () => {
                         <img src="/images/development_main.png" className={styles.centered}/> :
                         <p>
                             Iterating on my improving React ability I set out to create a quick project that provided users
-                            a fun way to sort and filter their favorite eagles players to get a guage of the varying
+                            a fun way to sort and filter their favorite Eagles players to get a guage of the varying
                             experience on the team! This was a great experience to learn about React state and how memory tends
                             to work on web applications.
                         </p>
-                        <h1>
-                            Functionality
-                        </h1>
+                        <div className={styles.header}>
+                            Design Iterations
+                        </div>
                         <div className={styles.row}> 
                             <img src="/images/development_filters.png" className={styles.smaller}/>
                             <img src="/images/development_sort.png" className={styles.smaller}/>
@@ -139,6 +139,17 @@ const Development = () => {
                             Next, I added an animation for errors so that it is clearer the word is being denied. Additionally,
                             I added a label to depict the hard mode of Wordle. Finally, keyboard animations that highlight
                             the user's keys are included.
+                        </p>
+                        <div className={styles.header}>
+                            Lessons
+                        </div>
+                        <p className={styles.topless}>
+                            <li>
+                                <strong>useRef</strong> persists between renders which can be really useful
+                            </li>
+                            <li>
+                                <strong>useEffect</strong> is a very powerful hook
+                            </li>
                         </p>
                         <div className={styles.header}>
                             Skills

@@ -121,14 +121,26 @@ const Wordle = () => {
                             <img src="/images/wordle_dark.png" className={styles.centered}/> :
                             <img src="/images/wordle_light.png" className={styles.centered}/>
                         }
+                        <div className={styles.header}>
+                            Context
+                        </div>
                         <p>
                             In July of 2022, I set out to clone the popular app <strong>Wordle</strong> for a couple reasons: I wanted to
                             improve my web development skills in a modern frontend stack, see if I could make a better application, and
                             because I knew the result would be sick!
                         </p>
-                        <h1>
-                            Useful Iterations
-                        </h1>
+                        <div className={styles.header}>
+                            Design Iterations
+                        </div>
+                        <p className={styles.topless}>
+                            I added a new visualization for the victory screen with allows users to more clearly see
+                            how they are performing compared to the older table. Additionally, it is far more interactive.
+                        </p>
+                        <p>
+                            Next, I added an animation for errors so that it is clearer the word is being denied. Additionally,
+                            I added a label to depict the hard mode of Wordle. Finally, keyboard animations that highlight
+                            the user's keys are included.
+                        </p>
                         <div className={styles.row}> 
                             {dark ? 
                                 <img src="/images/wordle_win_dark.png" className={styles.smaller}/> :
@@ -139,14 +151,25 @@ const Wordle = () => {
                                 <img src="/images/wordle_error_light.png" className={styles.smaller}/>
                             }
                         </div>
-                        <p>
-                            I added a new visualization for the victory screen with allows users to more clearly see
-                            how they are performing compared to the older table. Additionally, it is far more interactive.
-                        </p>
-                        <p className={styles.bottomless}>
-                            Next, I added an animation for errors so that it is clearer the word is being denied. Additionally,
-                            I added a label to depict the hard mode of Wordle. Finally, keyboard animations that highlight
-                            the user's keys are included.
+                        <div className={styles.header}>
+                            Lessons
+                        </div>
+                        <p className={styles.topless}>
+                            <li>
+                                <strong>Local storage</strong> is a really quick way to make a far more performative application
+                            </li>
+                            <li>
+                                <strong>useRef</strong> persists between renders which can be really useful
+                            </li>
+                            <li>
+                                Always styles using <strong>rem values</strong>
+                            </li>
+                            <li>
+                                It is vital to check if every Javascript/CSS tool being used works on every browser
+                            </li>
+                            <li>
+                                Finishing a big web project is an amazing feeling!
+                            </li>
                         </p>
                         <div className={styles.header}>
                             Skills

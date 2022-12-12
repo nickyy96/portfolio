@@ -10,7 +10,8 @@ const Header = ({children}: HeaderProps) => {
     return (
         <div className={styles.header}>
             <Link href="/">
-                Nicholas Yarnall
+                {/* Nicholas Yarnall */}
+                Lazy Tortoise
             </Link>
             <div className={styles.buttons}>{children}</div>
         </div>

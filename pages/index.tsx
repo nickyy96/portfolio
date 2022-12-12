@@ -37,14 +37,22 @@ export default function Home() {
     //globals
     let canvas = document.getElementById('my-canvas');
     let paraText = document.getElementById('paragraph');
+    let chevron = document.getElementById('chevron');
 
-    if (canvas && paraText) {
+    if (canvas && paraText && chevron) {
       let scroll = scrollRef.current!.scrollTop;
+      console.log(scroll)
       let height = canvas.offsetHeight;
       let offset = height - 2 * scroll;
 
       canvas.style.opacity = (offset / height).toString();
       paraText.style.opacity = (offset / height).toString();
+
+      if (scroll > 0) {
+        chevron.style.opacity = '0'
+      } else {
+        chevron.style.opacity = '1'
+      }
     }
   };
 
@@ -65,11 +73,11 @@ export default function Home() {
   const makeDance = () => {
     setDance(!dance);
     const elt = document.getElementById('projects')
-    if (elt) {
-      elt.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+    // if (elt) {
+    //   elt.scrollIntoView({
+    //     behavior: 'smooth'
+    //   });
+    // }
   };
 
   // mounting use effect
@@ -85,19 +93,30 @@ export default function Home() {
     // fades in text / model on load
     setTimeout(() => {
       if (fadeIn.current && fadeOut.current) {
-        document.getElementById("my-canvas")!.style.opacity = "1";
-        fadeOut.current.addEventListener("transitionend", () =>
-          fadeOut.current!.remove()
-        );
-        fadeOut.current.style.opacity = "0";
-        setTimeout(() => {
-          fadeIn.current!.style.opacity = "1";
-          fadeInPara.current!.style.opacity = "1";
-        }, 2000);
-        setTimeout(() => {
-          document.getElementById("my-canvas")!.style.transition = "opacity 0s";
-          document.getElementById("paragraph")!.style.transition = "opacity 0s";
-        }, 5000);
+          document.getElementById("my-canvas")!.style.opacity = "1";
+          fadeOut.current.addEventListener("transitionend", () =>
+            fadeOut.current!.remove()
+          );
+          fadeOut.current.style.opacity = "0";
+          setTimeout(() => {
+            if (fadeIn.current) {
+              fadeIn.current!.style.opacity = "1";
+            }
+            if (fadeInPara.current) {
+              fadeInPara.current!.style.opacity = "1";
+            }
+          }, 2000);
+          setTimeout(() => {
+            try {
+              let elt1 = document.getElementById("my-canvas")
+              let elt2 = document.getElementById("paragraph")
+
+              if (elt1 && elt2) {
+                elt1.style.transition = "opacity 0s";
+                elt2.style.transition = "opacity 0s";
+              }
+            } catch (err) {}
+          }, 5000);
       }
     }, 2000);
 
@@ -131,6 +150,11 @@ export default function Home() {
     <>
       {mounted && (
         <div className={styles.container} onScroll={scroll} ref={scrollRef}>
+          <div id="chevron" className={styles.scrollArrow}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+            </svg>
+          </div>
           <Header>
             {/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -175,7 +199,8 @@ export default function Home() {
             <div className={styles.intro}>
               <p ref={fadeOut}>hello world</p>
               <p style={{ opacity: "0" }} ref={fadeIn}>
-                i am <span>nicky</span>
+                {/* i am <span>nicky</span> */}
+                i am <span>lazy</span>
               </p>
               <p style={{ opacity: "0" }} ref={fadeInPara} id="paragraph">
                 {paragraph}

@@ -33,7 +33,7 @@
     position: relative;
 }
 
-.header, .topheader, .topheaderDev {
+.header, .topheader, .topheaderDev, .topheaderRed {
     font-weight: 600;
     font-size: 5rem;
     position: relative;
@@ -53,7 +53,7 @@
     color: transparent;
 }
 
-.topheader, .topheaderDev {
+.topheader, .topheaderDev, .topheaderRed {
     flex-direction: row;
     column-gap: 0.2rem;
 }
@@ -66,6 +66,12 @@
 
 .topheaderDev::before {
     content: "Development";
+    color: transparent;
+    margin-right: 1rem;
+}
+
+.topheaderRed::before {
+    content: "Redesign";
     color: transparent;
     margin-right: 1rem;
 }
@@ -148,4 +154,9 @@
 .start {
     align-self: flex-start;
     width: 100vw;
+}
+
+.body li {
+    margin: 0px;
+    margin-bottom: 1rem;
 }
