@@ -125,7 +125,7 @@
     row-gap: 10vh;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 600px) {
     .row {
         flex-direction: column;
         align-self: center;
@@ -134,8 +134,8 @@
     }
 
     .smaller {
-        /* width: 70vw; */
-        height: 30vh;
+        width: 70vw;
+        /* height: 30vh; */
     }
 }
 
