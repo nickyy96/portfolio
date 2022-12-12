@@ -1,0 +1,4 @@
+1) add buttons in header for navigation
+2) add local storage so when you click home it auto scrolls to correct spot
+3) remove all the UI UX garbage
+4) am i done?
