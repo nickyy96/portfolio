@@ -27,6 +27,7 @@ body {
   transition: background-color 500ms linear;
 
   --hoverColor: rgb(134, 133, 133);
+  --headerSize: calc(100vh / 11.5);
 }
 
 a {
@@ -49,4 +50,22 @@ button, svg {
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+@media screen and (max-width: 1500px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    font-size: 7px;
+  }
 }

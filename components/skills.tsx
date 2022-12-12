@@ -27,7 +27,7 @@ const tools = {
 
 const Skills = ({}: SkillsProps) => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="skills">
             <div className={styles.header}>
                 Skills
             </div>

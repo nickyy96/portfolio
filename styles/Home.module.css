@@ -19,12 +19,32 @@
 .canvas {
   position: absolute;
   top: 15%;
-  left: 50%;
-  max-width: 40rem;
+  left: 40%;
+  max-width: 700px;
   background-color: rgba(255, 255, 255, 0);
   transition: opacity 5s;
   opacity: 0;
 }
+
+@media screen and (max-width: 1000px) {
+  .canvas {
+    max-height: 70rem;
+    top: 30%;
+    left: 50%;
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .canvas {
+    max-height: 50rem;
+    top: 40%;
+    left: 5%;
+    max-width: 400px;
+  }
+}
+
+
 
 .intro {
   font-weight: 300;
@@ -82,12 +102,6 @@
 	100% {
 		background-position: 0% 50%;
 	}
-}
-
-.svgWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .container svg {

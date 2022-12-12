@@ -1,6 +1,6 @@
 .container {
     --border: 0.15rem;
-    min-height: 100vh;
+    height: fit-content;
     min-width: 100vw;
     display: flex;
     justify-content: center;
@@ -14,7 +14,6 @@
 
 .grid {
     --radius: 3rem;
-    height: 80vh;
     width: 70%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -27,7 +26,7 @@
     transition: background-color 500ms linear;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1500px) {
     .grid {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -55,6 +54,37 @@
 
 .imgWrapper img {
     width: 100%;
+}
+
+.cover {
+    position: absolute;
+    top: 0; bottom: 0; right: 0; left: 0;
+    background-color: black;
+    opacity: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.cover:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cover:hover p:first-child {
+    font-weight: 600;
+    font-size: 2rem;
+    justify-self: flex-start;
+}
+
+.cover:hover p:last-child {
 }
 
 .desc {
@@ -85,7 +115,7 @@
     display: flex;
     align-self: flex-start;
 }
-  
+
 /* .card:hover::before {
     content: '';
     position: absolute;
@@ -99,7 +129,7 @@
     background-size: 300% 300%;
     animation-fill-mode: forwards;
     z-index: -1;
-}
+} */
 
 @keyframes animatedgradient {
 	0% {
@@ -111,4 +141,4 @@
 	100% {
 		background-position: 0% 50%;
 	}
-} */
+}

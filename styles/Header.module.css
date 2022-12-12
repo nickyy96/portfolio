@@ -1,7 +1,6 @@
 .header {
     --border: 0.15rem;
     --padding: 1rem;
-    --headerSize: calc(100vh / 11.5);
     min-height:var(--headerSize);
     background: var(--backgroundColor);
     position: fixed;

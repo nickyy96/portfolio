@@ -1,0 +1,151 @@
+.container {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+  
+.container svg {
+    margin: 0.5rem;
+    width: 2rem;
+}
+  
+.svgWrapper {
+    cursor: pointer;
+}
+
+.svgWrapper:hover {
+    background-color: var(--hoverColor);
+    border-radius: 0.2rem;
+}
+
+.body {
+    margin-top: calc(var(--headerSize) + 0.15rem);
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.header, .topheader, .topheaderDev {
+    font-weight: 600;
+    font-size: 5rem;
+    position: relative;
+    margin-left: 15%;
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: flex;
+    align-self: flex-start;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.header {
+    color: transparent;
+}
+
+.topheader, .topheaderDev {
+    flex-direction: row;
+    column-gap: 0.2rem;
+}
+
+.topheader::before {
+    content: "Wordle";
+    color: transparent;
+    margin-right: 1rem;
+}
+
+.topheaderDev::before {
+    content: "Development";
+    color: transparent;
+    margin-right: 1rem;
+}
+
+.body svg {
+    width: 3rem;
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.body p, .body h1{
+    margin-left: 15%;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 70vw;
+}
+
+.body h1 {
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+.centered {
+    max-width: 70vw;
+}
+
+.smaller {
+    width: 32.5vw;
+}
+
+.row, .column {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 15vw;
+    column-gap: 5vw;
+}
+
+.column {
+    flex-direction: column;
+    row-gap: 10vh;
+}
+
+@media screen and (max-width: 1500px) {
+    .row {
+        flex-direction: column;
+        align-self: center;
+        margin: 0;
+        row-gap: 5vh;
+    }
+
+    .smaller {
+        /* width: 70vw; */
+        height: 30vh;
+    }
+}
+
+.bottomless {
+    margin-bottom: 0px;
+}
+
+.topless {
+    margin-top: 0px;
+}
+
+.skills {
+    margin-left: 0px;
+}
+
+.start {
+    align-self: flex-start;
+    width: 100vw;
+}

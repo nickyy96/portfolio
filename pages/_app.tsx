@@ -4,6 +4,6 @@ import Script from 'next/script'
 
 export default function App({ Component, pageProps }: AppProps) {
   return <>
-    <Component {...pageProps} />
+    <Component {...pageProps} hello={'hi'} />
   </>
 }

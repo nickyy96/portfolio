@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import styles from '../styles/Header.module.css'
+import Link from 'next/link'
 
 interface HeaderProps {
     children: React.ReactNode
@@ -8,7 +9,9 @@ interface HeaderProps {
 const Header = ({children}: HeaderProps) => {
     return (
         <div className={styles.header}>
-            Nicholas Yarnall
+            <Link href="/">
+                Nicholas Yarnall
+            </Link>
             <div className={styles.buttons}>{children}</div>
         </div>
     )
