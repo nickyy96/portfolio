@@ -22,7 +22,7 @@ const Grid = ({height, width}: GridProps) => {
     });
     const WebkitMaskPosition = useMotionTemplate`${centerMouseX}px ${centerMouseY}px`;
 
-        // eased mouse position
+    // eased mouse position
     const mouseXEased = useMotionValue(0);
     const mouseYEased = useMotionValue(0);
     // mouse velocity
@@ -37,7 +37,7 @@ const Grid = ({height, width}: GridProps) => {
 
     useEffect(() => {
         const calculateGrid = () => {
-          const columnCount = Math.ceil(window.innerWidth / CELL_SIZE);
+          const columnCount = Math.ceil(width / CELL_SIZE);
           setColumns(columnCount);
           const rowCount = Math.ceil(height / CELL_SIZE);
           setRows(rowCount);
@@ -51,7 +51,7 @@ const Grid = ({height, width}: GridProps) => {
         return () => {
           window.removeEventListener('resize', calculateGrid);
         };
-      }, [height]);
+      }, [height, width]);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -77,16 +77,12 @@ const Grid = ({height, width}: GridProps) => {
     return (
         <motion.div style={{display: 'grid',  
                             gridTemplateColumns: `repeat(${columns}, 1fr)`,
-                            position: 'absolute',
-                            top: '2px',
-                            bottom: '0px',
-                            minWidth: '100vw',
                             opacity,
                             WebkitMaskPosition
                         }} 
                     className={styles.grid}>
             {Array.from({ length: columns * rows }).map((_, i) => (
-                <Cell key={i} mouseX={mouseX} mouseY={mouseY} />
+                <Cell key={i}/>
             ))}
         </motion.div>
     )

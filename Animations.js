@@ -7,18 +7,19 @@ export function Model(props) {
   const { actions } = useAnimations(animations, group)
 
   useEffect(() => {
-    console.log(actions);
-    actions["Dance"].play()
-    setTimeout(() => {
-      actions["Wave"].stop();
-      actions["Dance"].play()
-    }, 9500)
-    setTimeout(()=> {
-      actions["Dance"].stop();
-      actions["Wave"].play();
-    }, 5000)
+    actions["Wave"].play()
     console.log(props)
   }, []);
+
+  useEffect(() => {
+    if (props.dance) {
+      actions["Wave"].stop()
+      actions["Dance"].play()
+    } else {
+      actions["Dance"].stop()
+      actions["Wave"].play()
+    }
+  }, [props.dance])
 
   return (
     <group ref={group} {...props} dispose={null}>

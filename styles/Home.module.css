@@ -1,28 +1,105 @@
 .container {
-  padding: 0 2rem;
+  padding: 0;
+  margin: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .body {
-  width: 100vw;
-  flex: 1;
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
   position: relative;
-  overflow: hidden;
 }
 
 .canvas {
-  width: 50vw;
-  height: 50vh;
-  background-color: rgba(255, 255, 255, 0)
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0);
+  transition: opacity 5s;
+  opacity: 0;
 }
 
 .intro {
-  font-size: xx-large;
+  font-weight: 300;
+  font-size: 5rem;
   position: absolute;
-  top: 50%;
+  top: 20%;
+  left: 25%;
+  color: var(--fontColor);
+  transition: opacity 5s;
+  display: flex;
+}
+
+.intro p {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  transition: opacity 2s;
+}
+
+.intro p:last-child {
+  position: absolute;
+  top: 15rem;
+  font-size: 2rem;
+  width: 30rem;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+.intro span{
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+/* possible emoji if I want later */
+/* .intro p::after {
+  content: "😄";
+  font-size: 4rem;
+} */
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.svgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container svg {
+  margin: 0.5rem;
+  width: 2rem;
+}
+
+.svgWrapper {
+  cursor: pointer;
+}
+
+.svgWrapper:hover {
+  background-color: var(--hoverColor);
+  border-radius: 0.2rem;
 }

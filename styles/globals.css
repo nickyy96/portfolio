@@ -4,6 +4,14 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
+}
+
+*{
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -15,18 +23,30 @@ body {
   overflow-x: hidden;
   background-color: var(--backgroundColor);
   color: var(--fontColor);
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: background-color 500ms linear;
+
+  --hoverColor: rgb(134, 133, 133);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  padding: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
 }
 
 * {
   box-sizing: border-box;
 }
 
-button {
-  color: red
+button, svg {
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
-
