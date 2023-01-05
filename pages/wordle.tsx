@@ -133,12 +133,12 @@ const Wordle = () => {
                             Design Iterations
                         </div>
                         <p className={styles.topless}>
-                            I added a new visualization for the victory screen with allows users to more clearly see
-                            how they are performing compared to the older table. Additionally, it is far more interactive.
+                            I added a new visualization for the victory screen which allows users to more clearly understand
+                            how they are performing compared with the older version. Additionally, it is far more interactive.
                         </p>
                         <p>
-                            Next, I added an animation for errors so that it is clearer the word is being denied. Additionally,
-                            I added a label to depict the hard mode of Wordle. Finally, keyboard animations that highlight
+                            Next, I added an animation for errors so that invalid words are clearly visualized.
+                            I also added a label to depict the hard mode of Wordle, a feature I always wished wordle had. Finally, keyboard animations that highlight
                             the user's keys are included.
                         </p>
                         <div className={styles.row}> 
@@ -162,7 +162,7 @@ const Wordle = () => {
                                 <strong>useRef</strong> persists between renders which can be really useful
                             </li>
                             <li>
-                                Always styles using <strong>rem values</strong>
+                                Always style in css using <strong>rem values</strong> or resizeability will be a nightmare
                             </li>
                             <li>
                                 It is vital to check if every Javascript/CSS tool being used works on every browser
