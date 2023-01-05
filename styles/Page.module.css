@@ -160,3 +160,7 @@
     margin: 0px;
     margin-bottom: 1rem;
 }
+
+.spacer {
+    min-height: 10vh;
+}

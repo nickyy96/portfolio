@@ -1,12 +1,19 @@
 .header {
     --border: 0.15rem;
     --padding: 1rem;
-    min-height:var(--headerSize);
+    height: auto;
     background: var(--backgroundColor);
     position: fixed;
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 99;
+    transition: background-color 500ms linear;
+}
+
+.headerContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,17 +26,11 @@
     transition: background-color 500ms linear;
 }
 
-.header:after {
-    content: '';
-    position: fixed;
-    top: var(--headerSize);
-    left: 0;
-    right: 0;
-    bottom: calc(100vh - (var(--headerSize) + var(--border)));
+.bottom {
+    min-height: 0.15rem;
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     animation: animatedgradient 3s ease alternate infinite;
     background-size: 300% 300%;
-    z-index: 98;
 }
 
 @keyframes animatedgradient {

@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import Contact from "../components/contact"
-import Grid from "../components/grid";
-import Header from "../components/header"
-import SkillsUnit from "../components/skillsUnit";
-import { color, themeConfig } from "../public/theme";
+import Contact from "../../components/contact"
+import Grid from "../../components/grid";
+import Header from "../../components/header"
+import SkillsUnit from "../../components/skillsUnit";
+import { color, themeConfig } from "../../public/theme";
 import styles from "../styles/Page.module.css"
 
-const resdesign = {
-    name: "redesign",
-    skills: ['HTML', 'CSS']
+const personas = {
+    name: "personas",
+    skills: ['HTML', 'CSS', 'Figma']
 }
 
-const Redesign = () => {
+const Personas = () => {
     // state
     const [dark, setDark] = useState(color === "dark");
     const [height, setHeight] = useState(0);
@@ -100,7 +100,7 @@ const Redesign = () => {
                     <div className={styles.body}>
                         <div className={styles.topheaderRed}>
                             <a
-                                href="https://github.com/lazytortoise905/redesign"
+                                href="https://github.com/lazytortoise905/personas"
                                 target="_blank"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
@@ -108,7 +108,7 @@ const Redesign = () => {
                                 </svg>
                             </a>
                             <a
-                                href="https://lazytortoise905.github.io/beacon-inn-redesign/"
+                                href="https://lazytortoise905.github.io/personas/"
                                 target="_blank"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-link-45deg" viewBox="0 0 16 16">
@@ -117,82 +117,104 @@ const Redesign = () => {
                                 </svg>
                             </a>
                         </div>
-                        <img src="/images/redesign_main.png" className={styles.centered}/>
+                        <img src="/images/personas/interface.png" className={styles.centered}/>
                         <div className={styles.header}>
                             Context
                         </div>
                         <p className={styles.topless}>
-                            The goal of this project was to redesign an existing website to better fit the needs of their potential users. This was an excellent
-                            opportunity to improve my <strong>design, css, </strong> and <strong>html</strong> skills.
-                        </p>
-                        <img src="/images/redesign/beacon_og.png" className={styles.centered}/>
-                        <p>
-                            The website is not easy to learn because it is not intuitive. Why is there a "rooms" page and a "reservations" page? Users who are looking to 
-                            quickly make a reservation will not immediately understand why both of those pages are necessary. This functionality should be front and center on 
-                            the home page. It appears as though the rooms page is meant to be a display of the available rooms and the reservations page is designed for users to 
-                            actually book them, but their functionality overlaps far too much. This website would be much easier to follow if the home page was where users could being booking rooms. 
-                            The small section for booking on the bottom of the home page does not show any information other than a calendar, and there is somehow exposed html code below the form. 
-                            The about us page is also very confusing because there is so much content below the main picture in the original site which seems like it is the about us page; but there is another page with even more text. 
-                            This is confusing.
+                            The goal of this projects is to create two <strong>personas</strong> for users of this Coca Cola machine.
                         </p>
                         <p>
-                            <strong>Clearly some things to be changed.</strong>
+                        This machine is able to efficiently provide students with access to many types of soft drinks without taking up a
+                         ridiculous amount of space. As a result, it provides dining halls an easy way to give students many options without 
+                         allocating a ton of space or money to many types of machines. It works by mxing the syrups for a wide variety of drinks 
+                         with the same standard soda or water base. There is a screen which provides a touch interface for users to select their 
+                         drinks or even filter the type of drinks displayed. There is also a lever which is triggered by pushing a cup into it which 
+                         dispenses the selected drink. There is also another lever which is triggered in a similar fashion to dispense ice. Lastly, 
+                         users are able to pour their drinks into the drain which keeps the immediate surrounding surface cleaner than if spills were 
+                         just poured onto the countertop.
+                        </p>
+                        <p>
+                            <strong>Through observations, I will create two types of typical users for this machine</strong>
                         </p>
                         <div className={styles.header}>
                             Research
                         </div>
                         <p className={styles.topless}>
-                            I sought out to design a new website that fixed many of these issues.
-                        </p>
-                        <img src="/images/redesign/low-fi-desk-1.png" className={styles.centered}/>
-                        <br></br>
-                        <div className={styles.row}> 
-                            <img src="/images/redesign/low-fi-mobile.png" className={styles.smaller}/>
-                            <img src="/images/redesign/low-fi-tablet-2.png" className={styles.smaller}/>
-                        </div>
-                        <p>
-                            I liked these designs a lot, and they removed a lot of the overarching issues.
-                            Additionally, I saw a serious compatability with this new site and a mobile screen,
-                            something that the current site really whiffed on.
+                            I conducted interviews on five users.
                         </p>
                         <p>
-                            <strong>Next, I had to consider what sort of high fidelity styling would really make this site pop.</strong>
+                            <li>
+                                <strong>Do you like this interface?</strong>
+                            </li>
+                            <p>
+                                The first student I talked to expressed mostly distaste for the interface: 
+                                "It is annoying to navigate and can be really laggy," he said. The second 
+                                student expressed her distaste with the availability of the drinks - denoted 
+                                by greyed out circles on the screen: "Most of the drinks are usually not full," 
+                                she said. The third student expressed that he did not really have any opinion on it.
+                            </p>
+                            <li>
+                                <strong>Would you change, add, or remove anything from this interface? You can say no if you cannot think of anything.</strong>
+                            </li>
+                            <p>
+                                The first student noted that he would prefer a different organizational structure as the circles did not make much sense to him and 
+                                the next two did not have any significant comments.
+                            </p>
+                            <li>
+                                <strong>The first student noted that he would prefer a different organizational structure as the circles did not make much sense to him and the next two did not have any significant comments.</strong>
+                            </li>
+                            <p>
+                            Two of the students shared that they would revert to another alternative, such as the water or milk.
+                            </p>
+                            <li>
+                                <strong>Do you always get the same drink?</strong>
+                            </li>
+                            <p>
+                                Every student shared that they usually select between 1-2 sodas or water.
+                            </p>
                         </p>
+                        <p>
+                            After conducting a few interviews and observing a plethora of students I was able to create two character archetypes.
+                        </p>
+                        <p>
+                            Patient Peter is a complacent user - someone who waits in a line for an inefficient machine when others would not. This 
+                            persona represents some of the users I interviewed who expressed a "this is fine" attitude towards this interface. The machine works, 
+                            sometimes; but it works well enough to make users like patient peter accept the reality of the situation.
+                        </p>
+                        <img src="/images/personas/iman.png" className={styles.centered}/>
+                        <p>
+                        Impatient Iman is a non-complacent user - someone who will simply find alternative options rather than waste her time waiting in line for a machine that, 
+                        albeit does contain more options, is slow and annoying to use. This persona represents some of the users I interviewed who expressed that when there is a 
+                        line they will simply go get milk or water.
+                        </p>
+                        <img src="/images/personas_main.png" className={styles.centered}/>
                         <p className={styles.bottomless}>
-                            Next, I added an animation for errors so that it is clearer the word is being denied. Additionally,
-                            I added a label to depict the hard mode of Wordle. Finally, keyboard animations that highlight
-                            the user's keys are included.
+                            <strong>I liked these archetypes a lot, and decided to select patient peter for a storyboard!</strong>
                         </p>
                         <div className={styles.header}>
                             Design Iterations
                         </div>
-                        <img src="/images/redesign/style-guide.png" className={styles.centered}/>
-                        <p>
-                            This style guide really pulled the vision into reality, and I was confident I had found
-                            a mellow but informative combination of elements and colors perfect for an antique hotel.
-                        </p>
+                        <img src="/images/personas/story.png" className={styles.centered}/>
                         <p className={styles.bottomless}>
-                            <a href="https://lazytortoise905.github.io/beacon-inn-redesign/" target="_blank"><strong>Final Site</strong></a>
+                            This storyboard follows <strong>Patient Peter</strong> across his journey to get a drink from the machine!
                         </p>
                         <div className={styles.header}>
                             Lessons
                         </div>
                         <p className={styles.topless}>
                             <li>
-                                The textual information presented in mobile screens needs to be <strong>limited</strong>
+                                Figma templates are really <strong>aesthetic</strong>
                             </li>
                             <li>
-                                Media queries are extremely <strong>vital</strong> to resizeability
-                            </li>
-                            <li>
-                                Reusing css classes is <strong>key</strong>
+                                In the future I would have selected an interface with more variety of use.
                             </li>
                         </p>
                         <div className={styles.header}>
                             Skills
                         </div>
                         <div className={styles.start}>
-                            <SkillsUnit name={resdesign.name} skills={resdesign.skills}></SkillsUnit>
+                            <SkillsUnit name={personas.name} skills={personas.skills}></SkillsUnit>
                         </div>
                         <br></br>
                     </div>
@@ -203,4 +225,4 @@ const Redesign = () => {
     )
 }
 
-export default Redesign
+export default Personas

@@ -100,7 +100,7 @@ const Wordle = () => {
                     <div className={styles.body}>
                         <div className={styles.topheader}>
                             <a
-                                // href="https://github.com/nickyy96?tab=repositories"
+                                href="https://github.com/nickyy96/Wordle"
                                 target="_blank"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
@@ -108,7 +108,7 @@ const Wordle = () => {
                                 </svg>
                             </a>
                             <a
-                                // href="https://github.com/nickyy96?tab=repositories"
+                                href="https://wordle.nickyyarnall.dev/"
                                 target="_blank"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-link-45deg" viewBox="0 0 16 16">
@@ -177,7 +177,7 @@ const Wordle = () => {
                         <div className={styles.start}>
                             <SkillsUnit name={wordle.name} skills={wordle.skills}></SkillsUnit>
                         </div>
-                        <br></br>
+                        <div className={styles.spacer}/>
                     </div>
                     <Contact></Contact>
                 </div>

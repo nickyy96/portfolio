@@ -9,11 +9,14 @@ interface HeaderProps {
 const Header = ({children}: HeaderProps) => {
     return (
         <div className={styles.header}>
-            <Link href="/">
-                {/* Nicholas Yarnall */}
-                Lazy Tortoise
-            </Link>
-            <div className={styles.buttons}>{children}</div>
+            <div className={styles.headerContainer}>
+                <Link href="/">
+                    Nicholas Yarnall
+                </Link>
+                <div className={styles.buttons}>{children}</div>
+            </div>
+            <div className={styles.bottom}>
+            </div>
         </div>
     )
 }

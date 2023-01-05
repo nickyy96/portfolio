@@ -9,38 +9,25 @@ const projects = [
     img: "/images/wordle.png",
     name: "Wordle",
     desc: "A modernized Wordle clone with some neat upgrades"
-  },
-  {
-    img: "/images/redesign_main.png",
-    name: "Redesign",
-    desc: "A redesign of a hotel's website with prototypes, a style guide, and HTML"
-  },
-  {
-    img: "/images/development_main.png",
-    name: "Development",
-    desc: "A neat app to interact with Eagles players"
-  },
-  {
-    img: "/images/personas_main.png",
-    name: "Personas",
-    desc: "A charicature of hypothetical users of a Coca Cola machine"
   }
 ]
 
 interface WorkProps {
-
+  handleClick: () => void
 }
 
 interface CardProps {
-    num: number
+  num: number
+  handleClick: () => void
 }
 
-const Card = ({num}: CardProps) => {
+const Card = ({num, handleClick}: CardProps) => {
   
   return (
       <div
         className={styles.card}
         id={num.toString()}
+        onClick={handleClick}
       >
         <div className={styles.imgWrapper}>
           <img src={projects[num].img}/>
@@ -53,7 +40,7 @@ const Card = ({num}: CardProps) => {
     );
 }
 
-const Work = ({}: WorkProps) => {
+const Work = ({handleClick}: WorkProps) => {
     return (
         <div className={styles.container} id="projects">
             <div className={styles.header}>
@@ -61,17 +48,17 @@ const Work = ({}: WorkProps) => {
             </div>
             <div className={styles.grid}>
               <Link href="/wordle">
-                <Card num={0}></Card>
+                <Card num={0} handleClick={handleClick}></Card>
               </Link>
-              <Link href="/redesign">
-                <Card num={1}></Card>
+              {/* <Link href="/redesign">
+                <Card num={1} handleClick={handleClick}></Card>
               </Link>
               <Link href="/development">
-                <Card num={2}></Card>
+                <Card num={2} handleClick={handleClick}></Card>
               </Link>
               <Link href="/personas">
-                <Card num={3}></Card>
-              </Link>
+                <Card num={3} handleClick={handleClick}></Card>
+              </Link> */}
             </div>
         </div>
     )

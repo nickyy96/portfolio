@@ -8,7 +8,6 @@ export function Model(props) {
 
   useEffect(() => {
     actions["Wave"].play()
-    console.log(props)
   }, []);
 
   useEffect(() => {

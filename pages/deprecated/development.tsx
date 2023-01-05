@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import Contact from "../components/contact"
-import Grid from "../components/grid";
-import Header from "../components/header"
-import SkillsUnit from "../components/skillsUnit";
-import { color, themeConfig } from "../public/theme";
+import Contact from "../../components/contact"
+import Grid from "../../components/grid";
+import Header from "../../components/header"
+import SkillsUnit from "../../components/skillsUnit";
+import { color, themeConfig } from "../../public/theme";
 import styles from "../styles/Page.module.css"
 
 const development = {

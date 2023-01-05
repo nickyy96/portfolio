@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  overflow: auto;
+}
+
 *{
   -ms-overflow-style: none;
 }
@@ -25,7 +29,7 @@ body {
   color: var(--fontColor);
   font-family: 'Source Sans Pro', sans-serif;
   transition: background-color 500ms linear;
-
+  overflow-y: scroll;
   --hoverColor: rgb(134, 133, 133);
   --headerSize: calc(100vh / 11.5);
 }

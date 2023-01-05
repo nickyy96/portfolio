@@ -41,7 +41,7 @@ export default function Home() {
 
     if (canvas && paraText && chevron) {
       let scroll = scrollRef.current!.scrollTop;
-      console.log(scroll)
+      // console.log(scroll)
       let height = canvas.offsetHeight;
       let offset = height - 2 * scroll;
 
@@ -55,6 +55,26 @@ export default function Home() {
       }
     }
   };
+
+  // handles click on chevron and moves to projects
+  const makeScroll = () => {
+    const elt = document.getElementById('projects')
+    if (elt) {
+      elt.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
+  
+  // scrolls to skills
+  const toSkills = () => {
+    const elt = document.getElementById('skills')
+    if (elt) {
+      elt.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
 
   // inits height and width for background grid
   const update = () => {
@@ -72,12 +92,24 @@ export default function Home() {
   // dance handler
   const makeDance = () => {
     setDance(!dance);
-    const elt = document.getElementById('projects')
-    // if (elt) {
-    //   elt.scrollIntoView({
-    //     behavior: 'smooth'
-    //   });
-    // }
+  };
+
+  // handle scroll position after content load
+  const handleScrollPosition = () => {
+    const scrollPosition = sessionStorage.getItem("scrollPosition");
+    if (scrollPosition) {
+      setTimeout(() => {
+        if (scrollRef.current) {
+          scrollRef.current!.scrollTo(0, parseInt(scrollPosition));
+        }
+      }, 1)
+      sessionStorage.removeItem("scrollPosition");
+    }
+  };
+
+  // store position in sessionStorage
+  const handleClick = () => {
+    sessionStorage.setItem("scrollPosition", scrollRef.current!.scrollTop.toString());
   };
 
   // mounting use effect
@@ -120,6 +152,9 @@ export default function Home() {
       }
     }, 2000);
 
+    // scroll if necessary
+    handleScrollPosition();
+
     // resets grid if window is altered
     window.addEventListener("resize", update);
     return () => {
@@ -151,15 +186,17 @@ export default function Home() {
       {mounted && (
         <div className={styles.container} onScroll={scroll} ref={scrollRef}>
           <div id="chevron" className={styles.scrollArrow}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-chevron-compact-down" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-chevron-compact-down" viewBox="0 0 16 16" onClick={makeScroll}>
+              <path fillRule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
             </svg>
           </div>
           <Header>
-            {/* <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-            <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-          </svg> */}
+            <div className={styles.svgWrapper} onClick={makeScroll}>
+              <p>Projects</p>
+            </div>
+            <div className={styles.svgWrapper} onClick={toSkills}>
+              <p>Skills</p>
+            </div>
             <div className={styles.svgWrapper} onClick={makeDance}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -194,13 +231,12 @@ export default function Home() {
               )}
             </div>
           </Header>
-          <Grid height={height} width={width} />
+          <Grid height={height} width={width}/>
           <div className={styles.body} ref={ref}>
             <div className={styles.intro}>
               <p ref={fadeOut}>hello world</p>
               <p style={{ opacity: "0" }} ref={fadeIn}>
-                {/* i am <span>nicky</span> */}
-                i am <span>lazy</span>
+                i am <span>nicky</span>
               </p>
               <p style={{ opacity: "0" }} ref={fadeInPara} id="paragraph">
                 {paragraph}
@@ -222,7 +258,7 @@ export default function Home() {
               {/* <OrbitControls /> */}
             </Canvas>
           </div>
-          <Work></Work>
+          <Work handleClick={handleClick}></Work>
           <Skills></Skills>
           <Contact></Contact>
         </div>

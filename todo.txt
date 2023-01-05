@@ -1,4 +1,6 @@
-1) add buttons in header for navigation
-2) add local storage so when you click home it auto scrolls to correct spot
-3) remove all the UI UX garbage
-4) change favicon to surfs up emoji
+1) add buttons in header for navigation ✔️
+2) add local storage so when you click home it auto scrolls to correct spot ✔️
+3) remove all the UI UX garbage ✔️
+4) change favicon to surfs up emoji ✔️
+5) mozilla compatibility ✔️
+6) Add copyright

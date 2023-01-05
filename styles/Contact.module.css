@@ -1,9 +1,8 @@
 .container {
-    --headerSize: calc(100vh / 7);
     --border: 0.15rem;
     --padding: 1rem;
     min-width: 100vw;
-    min-height:var(--headerSize);
+    height: auto;
     background: var(--backgroundColor);
     display: flex;
     position: relative;
@@ -14,7 +13,7 @@
     /* padding-bottom: 4rem; */
     /* padding-top: 1rem; */
     border-top: 0.15rem solid var(--hoverColor);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .verticalLeft, .verticalRight, .vertical {
@@ -115,13 +114,11 @@
 }
 
 .emailinfo::before {
-    /* content: "nicholas_yarnall@brown.edu" */
-    content: "lazy_tortoise@brown.edu"
+    content: "nicholas_yarnall@brown.edu"
 }
 
 .linkedininfo::before {
-    /* content: "nicholas yarnall" */
-    content: "lazy_tortoise"
+    content: "nicholas yarnall"
 }
 
 @media screen and (max-width: 800px) {
