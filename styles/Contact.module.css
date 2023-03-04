@@ -110,7 +110,7 @@
 }
 
 .nameShrink::after {
-    content: " | Brown University";
+    content: " | Brown University '25";
 }
 
 .emailinfo::before {
@@ -122,10 +122,19 @@
 }
 
 @media screen and (max-width: 800px) {
-    .contactShrink::after, .nameShrink::after {
-        content: "";
-    } 
+    .contactShrink::after {
+        content: " | I'd Love to Talk";
+    }
+    .nameShrink::after {
+        content: " | Brown '25";
+    }
     .emailinfo::before, .linkedininfo::before {
         content: "";
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .verticalLeft p:first-child, .verticalRight p:first-child {
+        font-size: 1.5rem;
     }
 }
