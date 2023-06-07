@@ -1,6 +1,6 @@
 import { calcPosFromAngles, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react"
 import styles from "../styles/Home.module.css";
 import { Model } from "../Animations";
 import Header from "../components/header";
