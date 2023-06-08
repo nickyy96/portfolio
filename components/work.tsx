@@ -1,7 +1,3 @@
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect, useRef, useState } from "react";
-import styles from "../styles/Work.module.css"
 import Link from 'next/link';
 
 const projects = [
@@ -25,14 +21,14 @@ const Card = ({num, handleClick}: CardProps) => {
   
   return (
       <div
-        className={styles.card}
+        className="projectCard"
         id={num.toString()}
         onClick={handleClick}
       >
-        <div className={styles.imgWrapper}>
-          <img src={projects[num].img}/>
+        <div className="h-full overflow-hidden flex">
+          <img src={projects[num].img} className="max-w-full max-h-full"/>
         </div>
-        <div className={styles.cover}>
+        <div className="projectCover">
           <p>{projects[num].name}</p>
           <p>{projects[num].desc}</p>
         </div>
@@ -42,11 +38,11 @@ const Card = ({num, handleClick}: CardProps) => {
 
 const Work = ({handleClick}: WorkProps) => {
     return (
-        <div className={styles.container} id="projects">
-            <div className={styles.header}>
+        <div className="flex justify-center w-screen relative pt-[11vh] flex-col items-center gap-12 pb-[11vh]" id="projects">
+            <div className="moduleHeader">
                 Projects
             </div>
-            <div className={styles.grid}>
+            <div className="projectGrid">
               <Link href="/wordle">
                 <Card num={0} handleClick={handleClick}></Card>
               </Link>

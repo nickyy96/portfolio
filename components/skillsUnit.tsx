@@ -1,5 +1,3 @@
-import styles from "../styles/SkillsUnit.module.css"
-
 interface skillsUnit {
     name: string
     skills: string[]
@@ -7,12 +5,12 @@ interface skillsUnit {
 
 const SkillsUnit = ({name, skills}: skillsUnit) => {
     return (
-        <div className={styles.container}>
+        <div className="flex flex-col mr-[15%] ml-[15%] text-[2rem] gap-4">
             {name.toLocaleUpperCase()}
-            <div className={styles.skillGrid}>
+            <div className="flex flex-row flex-wrap gap-4">
                 {
                     skills.map((skill: string, index: number) => 
-                        <div className={styles.cell} key={index}>
+                        <div className="cell" key={index}>
                             {skill}
                         </div>
                     )

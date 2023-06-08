@@ -1,4 +1,3 @@
-import styles from "../styles/Skills.module.css"
 import SkillsUnit from "./skillsUnit"
 
 interface SkillsProps {
@@ -27,11 +26,11 @@ const tools = {
 
 const Skills = ({}: SkillsProps) => {
     return (
-        <div className={styles.container} id="skills">
-            <div className={styles.header}>
+        <div className="relative flex flex-col gap-12 mb-[10vh] w-screen" id="skills">
+            <div className="moduleHeader">
                 Skills
             </div>
-            <div className={styles.unitContainer}>
+            <div className="flex flex-col gap-4 relative">
                 <SkillsUnit name={lang.name} skills={lang.skills}/>
                 <SkillsUnit name={frontend.name} skills={frontend.skills}/>
                 <SkillsUnit name={backend.name} skills={backend.skills}/>
