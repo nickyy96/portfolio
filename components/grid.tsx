@@ -1,6 +1,5 @@
 import { animate, useMotionValue, motion, useTransform, useMotionTemplate, useVelocity, AnimationOptions } from "framer-motion"
 import { useEffect, useState } from "react"
-import styles from "../styles/Grid.module.css"
 import Cell, { CELL_SIZE } from "./cell"
 
 interface GridProps {
@@ -80,7 +79,7 @@ const Grid = ({height, width}: GridProps) => {
                             opacity,
                             WebkitMaskPosition
                         }} 
-                    className={styles.grid}>
+                    className="grid">
             {Array.from({ length: columns * rows }).map((_, i) => (
                 <Cell key={i}/>
             ))}
