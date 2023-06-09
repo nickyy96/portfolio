@@ -190,7 +190,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div style={{width: '100%', height: '100%', position: 'relative'}}>
       {mounted && (
         <div className={styles.container} onScroll={scroll} ref={scrollRef}>
           <div id="chevron" className={styles.scrollArrow}>
@@ -263,7 +263,7 @@ export default function Home() {
               <Suspense fallback={null}>
                 <Model position={[0.025, -0.9, 0]} dance={dance}/>
               </Suspense>
-              <OrbitControls enableZoom={false} />
+              {/* <OrbitControls enableZoom={false} /> */}
             </Canvas>
           </div>
           <Work handleClick={handleClick}></Work>
@@ -271,6 +271,6 @@ export default function Home() {
           <Contact></Contact>
         </div>
       )}
-    </>
+    </div>
   );
 }
