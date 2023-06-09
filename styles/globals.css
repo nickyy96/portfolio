@@ -6,10 +6,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
   /* overflow-y: scroll; */
+  overflow: hidden;
 }
 
 html {
   /* overflow: auto; */
+  overflow-y: scroll;
 }
 
 *{
@@ -30,7 +32,7 @@ body {
   color: var(--fontColor);
   font-family: 'Source Sans Pro', sans-serif;
   transition: background-color 500ms linear;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   --hoverColor: rgb(134, 133, 133);
   --headerSize: calc(100vh / 11.5);
 }
