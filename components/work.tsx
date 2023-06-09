@@ -9,6 +9,11 @@ const projects = [
     img: "/images/wordle.png",
     name: "Wordle",
     desc: "A modernized Wordle clone with some neat upgrades"
+  },
+  {
+    img: "/images/style_transfer.png",
+    name: "Style Transfer",
+    desc: "A style transfer application for photos and videos"
   }
 ]
 
@@ -50,9 +55,10 @@ const Work = ({handleClick}: WorkProps) => {
               <Link href="/wordle">
                 <Card num={0} handleClick={handleClick}></Card>
               </Link>
-              {/* <Link href="/redesign">
+              <Link href="/styletransfer">
                 <Card num={1} handleClick={handleClick}></Card>
               </Link>
+              {/*
               <Link href="/development">
                 <Card num={2} handleClick={handleClick}></Card>
               </Link>

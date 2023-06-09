@@ -22,7 +22,7 @@ const backend = {
 
 const tools = {
     name: "tools",
-    skills: ['Git', 'Selenium', 'Firebase', 'Windows', 'Github']
+    skills: ['Git', 'Selenium', 'Firebase', 'Windows', 'Github', 'Conda', 'Tensorflow']
 }
 
 const Skills = ({}: SkillsProps) => {

@@ -33,7 +33,7 @@
     position: relative;
 }
 
-.header, .topheader, .topheaderDev, .topheaderRed {
+.header, .topheader, .topheaderDev, .topheaderRed, .topheaderStyle {
     font-weight: 600;
     font-size: 5rem;
     position: relative;
@@ -53,13 +53,19 @@
     color: transparent;
 }
 
-.topheader, .topheaderDev, .topheaderRed {
+.topheader, .topheaderDev, .topheaderRed, .topheaderStyle {
     flex-direction: row;
     column-gap: 0.2rem;
 }
 
 .topheader::before {
     content: "Wordle";
+    color: transparent;
+    margin-right: 1rem;
+}
+
+.topheaderStyle::before {
+    content: "Style Transfer";
     color: transparent;
     margin-right: 1rem;
 }
@@ -111,6 +117,11 @@
 
 .smaller {
     width: 32.5vw;
+}
+
+.smallerHeightWidth {
+    max-width: 32.5vw;
+    max-height: 15vw;
 }
 
 .row, .column {

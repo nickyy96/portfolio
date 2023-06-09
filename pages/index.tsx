@@ -253,9 +253,9 @@ export default function Home() {
               <pointLight intensity={2} position={[-1, 2, 3]} color="red" /> */}
               <directionalLight intensity={0.4} />
               <Suspense fallback={null}>
-                <Model position={[0.025, -0.9, 0]} dance={dance} />
+                <Model position={[0.025, -0.9, 0]} dance={dance}/>
               </Suspense>
-              {/* <OrbitControls /> */}
+              <OrbitControls enableZoom={false} />
             </Canvas>
           </div>
           <Work handleClick={handleClick}></Work>

@@ -6,12 +6,12 @@ import SkillsUnit from "../components/skillsUnit";
 import { color, themeConfig } from "../public/theme";
 import styles from "../styles/Page.module.css"
 
-const wordle = {
-    name: "wordle",
-    skills: ['Node.js', 'ReactJS', 'Typescript', 'SASS', 'CSS']
+const styletransfer = {
+    name: "style transfer",
+    skills: ['Node.js', 'Python', 'Tensorflow', 'ReactJS', 'CSS', 'Git', 'Conda', 'TypeScript', 'JavaScript']
 }
 
-const Wordle = () => {
+const Styletransfer = () => {
     // state
     const [dark, setDark] = useState(color === "dark");
     const [height, setHeight] = useState(0);
@@ -98,89 +98,68 @@ const Wordle = () => {
                     </Header>
                     <Grid height={height} width={width}></Grid>
                     <div className={styles.body}>
-                        <div className={styles.topheader}>
+                        <div className={styles.topheaderStyle}>
                             <a
-                                href="https://github.com/nickyy96/Wordle"
+                                href="https://github.com/nickyy96/sequence-stylizers#readme"
                                 target="_blank"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
                                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                                 </svg>
                             </a>
-                            <a
-                                href="https://wordle.nickyyarnall.dev/"
-                                target="_blank"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-link-45deg" viewBox="0 0 16 16">
-                                    <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
-                                    <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
-                                </svg>
-                            </a>
                         </div>
                         <a
-                            href="https://wordle.nickyyarnall.dev/"
+                            href="https://github.com/nickyy96/sequence-stylizers#readme"
                             target="_blank"
                         >
-                            {dark ? 
-                                <img src="/images/wordle_dark.png" className={styles.centered}/> :
-                                <img src="/images/wordle_light.png" className={styles.centered}/>
-                            }
+                            <img src="/images/style_transfer.png" className={styles.centered}/>
                         </a>
                         <div className={styles.header}>
                             Context
                         </div>
                         <p>
-                            In July of 2022, I set out to clone the popular app <strong>Wordle</strong> for a couple reasons: I wanted to
-                            improve my web development skills in a modern frontend stack, see if I could make a better application, and
-                            because I knew the result would be sick!
+                            In the Spring of 2023, I designed an application for users to <strong>transfer the style</strong> of a target image onto a base photo or video.
+                            This was a really fun idea because most of the existing literature around this type of generative machine learning did not leverage a frontend to provide
+                            readers a hands-on experience with this state of the art technology. By utilizing the convolutional layers of ImageNet's VGG19 network in addition to the Gram
+                            matrix to extract style, I was able to derive an AI model which can train an image or video to maintain its content while taking the style of the input. 
+                        </p>
+                        <p> 
+                            <strong>NOTE</strong>: This application is not deployed due to how computationally expensive the model training would be on a backend server - to use this 
+                            application click the Github link and follow the instruction in the <strong>README</strong>!
                         </p>
                         <div className={styles.header}>
                             Design Iterations
                         </div>
                         <p className={styles.topless}>
-                            I added a new visualization for the victory screen which allows users to more clearly understand
-                            how they are performing compared with the older version. Additionally, it is far more interactive.
+                            This application includes a file upload system which validates the uploads are of the correct type within the backend API handler (two photos or 
+                            one photo and one video). Once the files have been succesfully uploaded, the thumbnails become outlined in green and the <strong>transfer</strong> button
+                            activates which signals to the user that they can begin the style transfer.
                         </p>
                         <p>
-                            Next, I added an animation for errors so that invalid words are clearly visualized.
-                            I also added a label to depict the hard mode of Wordle, a feature I always wished wordle had. Finally, keyboard animations that highlight
-                            the user's keys are included.
+                            Once the style transfer is complete, the application also provides an easy way for the user to download the new output, whether that be a video or an image. 
+                        </p>
+                        <p>
+                            <strong>NOTE</strong>: this will take a very long amount of time (depending on your machine and settings it could take nearly 20 minutes per frame).
                         </p>
                         <div className={styles.row}> 
-                            {dark ? 
-                                <img src="/images/wordle_win_dark.png" className={styles.smaller}/> :
-                                <img src="/images/wordle_win_light.png" className={styles.smaller}/>
-                            }
-                            {dark ? 
-                                <img src="/images/wordle_error_dark.png" className={styles.smaller}/> :
-                                <img src="/images/wordle_error_light.png" className={styles.smaller}/>
-                            }
+                            <img src="/images/style_transfer_file.png" className={styles.smaller}/>
+                            <img src="/images/style_transfer_output.png" className={styles.smaller}/> 
                         </div>
-                        {/* <div className={styles.header}>
-                            Lessons
+                        <div className={styles.header}>
+                            Sample Output
                         </div>
                         <p className={styles.topless}>
-                            <li>
-                                <strong>Local storage</strong> is a really quick way to make a far more performative application
-                            </li>
-                            <li>
-                                <strong>useRef</strong> persists between renders which can be really useful
-                            </li>
-                            <li>
-                                Always style in css using <strong>rem values</strong> or resizeability will be a nightmare
-                            </li>
-                            <li>
-                                It is vital to check if every Javascript/CSS tool being used works on every browser
-                            </li>
-                            <li>
-                                Finishing a big web project is an amazing feeling!
-                            </li>
-                        </p> */}
+                            Here are some examples of images that have been converted via this application! (Last Supper and a Temple)
+                        </p>
+                        <div className={styles.row}> 
+                            <img src="/images/style_transfer_1.png" className={styles.smaller}/>
+                            <img src="/images/style_transfer_2.png" className={styles.smaller}/> 
+                        </div>
                         <div className={styles.header}>
                             Skills
                         </div>
                         <div className={styles.start}>
-                            <SkillsUnit name={wordle.name} skills={wordle.skills}></SkillsUnit>
+                            <SkillsUnit name={styletransfer.name} skills={styletransfer.skills}></SkillsUnit>
                         </div>
                         <div className={styles.spacer}/>
                     </div>
@@ -191,4 +170,4 @@ const Wordle = () => {
     )
 }
 
-export default Wordle
+export default Styletransfer
