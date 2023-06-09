@@ -6,12 +6,12 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
   /* overflow-y: scroll; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 html {
   /* overflow: auto; */
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 *{
