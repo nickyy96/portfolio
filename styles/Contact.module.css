@@ -1,6 +1,7 @@
 .container {
     --border: 0.15rem;
     --padding: 1rem;
+    padding-bottom: 5vh;
     min-width: 100vw;
     height: auto;
     background: var(--backgroundColor);
