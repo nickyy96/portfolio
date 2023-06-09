@@ -263,7 +263,7 @@ export default function Home() {
               <Suspense fallback={null}>
                 <Model position={[0.025, -0.9, 0]} dance={dance}/>
               </Suspense>
-              {/* <OrbitControls enableZoom={false} /> */}
+              <OrbitControls enableZoom={false} />
             </Canvas>
           </div>
           <Work handleClick={handleClick}></Work>
