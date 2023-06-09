@@ -59,7 +59,11 @@ export default function Home() {
   // handles click on chevron and moves to projects
   const makeScroll = () => {
     const elt = document.getElementById('projects')
+    //constants for offsets
+    const elementToOffset = document.getElementById('header');
+    const offsetHeight = elementToOffset?.offsetHeight;
     if (elt) {
+      elt.style.scrollMarginTop = `${offsetHeight}px`
       elt.scrollIntoView({
         behavior: 'smooth'
       });
@@ -69,7 +73,11 @@ export default function Home() {
   // scrolls to skills
   const toSkills = () => {
     const elt = document.getElementById('skills')
+    //constants for offsets
+    const elementToOffset = document.getElementById('header');
+    const offsetHeight = elementToOffset?.offsetHeight;
     if (elt) {
+      elt.style.scrollMarginTop = `${offsetHeight}px`
       elt.scrollIntoView({
         behavior: 'smooth'
       });
